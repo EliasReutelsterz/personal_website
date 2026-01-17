@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${title}">Website</title>
+</head>
+<body>
+  <h1 th:text="${title}">Titel</h1>
+
+  <ul>
+    <li th:each="s : ${sections}" th:text="${s}">Eintrag</li>
+  </ul>
+
+  <p>Noch nichts gestaltet.</p>
+</body>
+</html>
