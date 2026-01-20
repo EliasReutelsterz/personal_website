@@ -10,10 +10,15 @@
 <body>
 
 <header class="topbar">
-  <a class="brand" href="#top" aria-label="Zum Anfang">
-    <span class="brand-text">&lt;ER&gt;</span>
+  <a class="brand" href="#top" aria-label="Go to top">
+    <img
+      th:src="@{/img/icon.svg}"
+      alt="ER"
+      class="brand-logo"
+      width="32"
+      height="32"
+      style="filter: invert(1) !important;">
   </a>
-
 
   <nav class="nav" aria-label="Sektionen">
     <a href="#me" data-section="me">Me</a>
@@ -41,18 +46,15 @@
     <div class="hero">
       <div class="hero-text">
         <h1>Hi, I'm Elias.</h1>
-        <p class="subtitle">
-          Mathematician · Bioinformatician · Software Engineer
-        </p>
+        <p class="subtitle">Mathematician · Bioinformatician · Software Engineer</p>
         <p class="intro">
           I am insterested in algorithms, machine learning and bioinformatics. As I am always eager to learn new things, I am always open for new projects and collaborations. In my free time I like to do climbing, cycling and skiing.
         </p>
+
         <h3 class="subhead">Academics</h3>
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="year">2025 – present</span>
-            </div>
+            <div class="timeline-meta"><span class="year">2025 – present</span></div>
             <div class="content">
               <strong class="role">PhD in Bioinformatics</strong>
               <p class="muted small">Ludwig-Maximilians-University Munich</p>
@@ -60,9 +62,7 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="year">2023 – 2025</span>
-            </div>
+            <div class="timeline-meta"><span class="year">2023 – 2025</span></div>
             <div class="content">
               <strong class="role">M.Sc. in Mathematics</strong>
               <p class="muted small">Technical University of Munich, Exchange at Universidad Nacional del Sur - Bahía Blanca</p>
@@ -70,9 +70,7 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="year">2019 – 2023</span>
-            </div>
+            <div class="timeline-meta"><span class="year">2019 – 2023</span></div>
             <div class="content">
               <strong class="role">B.Sc. in Mathematics in Business</strong>
               <p class="muted small">University of Mannheim, Exchange at Korea University - Seoul</p>
@@ -83,9 +81,7 @@
         <h3 class="subhead">Working Experience</h3>
         <div class="timeline timeline--compact">
           <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="year">09.2025 – present</span>
-            </div>
+            <div class="timeline-meta"><span class="year">09.2025 – present</span></div>
             <div class="content">
               <strong class="role">Gene Center Munich</strong>
               <p class="muted">Researcher — Metagenomics, Data Pipeline Automation</p>
@@ -93,9 +89,7 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="year">04.2024 – 09.2024</span>
-            </div>
+            <div class="timeline-meta"><span class="year">04.2024 – 09.2024</span></div>
             <div class="content">
               <strong class="role">Leibniz Supercomputing Centre</strong>
               <p class="muted">Research Assistant — High Performance Computing, CI/CD</p>
@@ -103,9 +97,7 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="year">01.2023 – 10.2023</span>
-            </div>
+            <div class="timeline-meta"><span class="year">01.2023 – 10.2023</span></div>
             <div class="content">
               <strong class="role">d-fine GmbH</strong>
               <p class="muted">Working Student — Consulting, Data Science</p>
@@ -113,9 +105,7 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="year">01.2021 – 09.2021</span>
-            </div>
+            <div class="timeline-meta"><span class="year">01.2021 – 09.2021</span></div>
             <div class="content">
               <strong class="role">Syncwork AG</strong>
               <p class="muted">Working Student — Finance, Prediction Models</p>
@@ -123,47 +113,41 @@
           </div>
         </div>
       </div>
+
+      <!-- Portrait + per-tile hover reveal -->
       <div class="hero-media">
-        <img class="portrait" th:src="@{/img/profilbild.jpg}" alt="Profile picture">
+        <div class="portrait-wrap js-portrait-reveal">
+          <!-- Big icon behind -->
+          <img class="reveal-icon" th:src="@{/img/icon.svg}" alt="" aria-hidden="true">
+
+          <!-- Source image (hidden, used for tile slices) -->
+          <img class="portrait-src js-portrait-img" th:src="@{/img/profilbild.jpg}" alt="Profile picture">
+
+          <!-- Tiles overlay -->
+          <div class="portrait-tiles js-portrait-tiles" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
   </section>
 
-
   <section id="coding" class="section">
     <h2>Coding</h2>
-
     <div class="projects">
-
       <article class="project">
         <div class="project-img-grid">
           <img th:src="@{/img/projects/proj1_1.png}" alt="MyMensa Preview 1">
           <img th:src="@{/img/projects/proj1_2.png}" alt="MyMensa Preview 2">
         </div>
-
         <div class="project-body">
           <div class="project-top">
             <h3 class="project-title">MyMensa</h3>
             <a class="project-link" href="https://apps.apple.com/de/app/mymensa/id1614458462" target="_blank" rel="noreferrer">App Store ↗</a>
           </div>
-
-          <p class="project-desc">
-            Mobile App for arranging lunch meetings.
-          </p>
-
+          <p class="project-desc">Mobile App for arranging lunch meetings.</p>
           <ul class="stack" aria-label="Tech stack">
-            <li class="chip">
-              <img class="stack-ico" th:src="@{/img/techstack/flutter.svg}" alt="">
-              Flutter
-            </li>
-            <li class="chip">
-              <img class="stack-ico" th:src="@{/img/techstack/dart.svg}" alt="">
-              Dart
-            </li>
-            <li class="chip">
-              <img class="stack-ico" th:src="@{/img/techstack/firebase.svg}" alt="">
-              Firebase
-            </li>
+            <li class="chip"><img class="stack-ico" th:src="@{/img/techstack/flutter.svg}" alt="">Flutter</li>
+            <li class="chip"><img class="stack-ico" th:src="@{/img/techstack/dart.svg}" alt="">Dart</li>
+            <li class="chip"><img class="stack-ico" th:src="@{/img/techstack/firebase.svg}" alt="">Firebase</li>
           </ul>
         </div>
       </article>
@@ -173,100 +157,61 @@
           <img th:src="@{/img/projects/proj2_1.png}" alt="SPA Preview 1">
           <img th:src="@{/img/projects/proj2_2.png}" alt="SPA Preview 2">
         </div>
-
         <div class="project-body">
           <div class="project-top">
             <h3 class="project-title">Study Progress App</h3>
             <a class="project-link" href="https://github.com/EliasReutelsterz/spa" target="_blank" rel="noreferrer">GitHub ↗</a>
           </div>
-
-          <p class="project-desc">
-            Mobile App for students to track their academic progress and plan their courses.
-          </p>
-
+          <p class="project-desc">Mobile App for students to track their academic progress and plan their courses.</p>
           <ul class="stack" aria-label="Tech stack">
-            <li class="chip">
-              <img class="stack-ico" th:src="@{/img/techstack/flutter.svg}" alt="">
-              Flutter
-            </li>
-            <li class="chip">
-              <img class="stack-ico" th:src="@{/img/techstack/dart.svg}" alt="">
-              Dart
-            </li>
-            <li class="chip">
-              <img class="stack-ico" th:src="@{/img/techstack/firebase.svg}" alt="">
-              Firebase
-            </li>
+            <li class="chip"><img class="stack-ico" th:src="@{/img/techstack/flutter.svg}" alt="">Flutter</li>
+            <li class="chip"><img class="stack-ico" th:src="@{/img/techstack/dart.svg}" alt="">Dart</li>
+            <li class="chip"><img class="stack-ico" th:src="@{/img/techstack/firebase.svg}" alt="">Firebase</li>
           </ul>
         </div>
       </article>
 
       <article class="project">
         <img class="project-img" th:src="@{/img/projects/proj3.png}" alt="Optimizer Comparison Preview">
-
         <div class="project-body">
           <div class="project-top">
             <h3 class="project-title">Optimizer Comparison</h3>
             <a class="project-link" href="https://github.com/EliasReutelsterz/Machine-learning-projects/tree/main/Math%20for%20AI%20Presentation%20(Optimizer%20Comparison)" target="_blank" rel="noreferrer">GitHub ↗</a>
           </div>
-
-          <p class="project-desc">
-            3D Visualization of convergence of different deep learning optimizers.
-          </p>
-
+          <p class="project-desc">3D Visualization of convergence of different deep learning optimizers.</p>
           <ul class="stack" aria-label="Tech stack">
-            <li class="chip">
-              <img class="stack-ico" th:src="@{/img/techstack/python.svg}" alt="">
-              Python
-            </li>
-            <li class="chip">
-              <img class="stack-ico" th:src="@{/img/techstack/pytorch.svg}" alt="">
-              PyTorch
-            </li>
+            <li class="chip"><img class="stack-ico" th:src="@{/img/techstack/python.svg}" alt="">Python</li>
+            <li class="chip"><img class="stack-ico" th:src="@{/img/techstack/pytorch.svg}" alt="">PyTorch</li>
           </ul>
         </div>
       </article>
-
     </div>
   </section>
 
   <section id="research" class="section">
     <h2>Research</h2>
-
     <div class="projects">
-
       <article class="project">
         <img class="project-img" th:src="@{/img/theses/masterthesis.png}" alt="Master Thesis Preview">
-
         <div class="project-body">
           <div class="project-top">
             <h3 class="project-title">Master Thesis</h3>
             <a class="project-link" href="https://github.com/EliasReutelsterz/Masterthesis" target="_blank" rel="noreferrer">GitHub ↗</a>
           </div>
-
-          <p class="project-desc">
-            Uncertainty Quantification of PDEs with Random Parameters on Random Domains
-          </p>
-
+          <p class="project-desc">Uncertainty Quantification of PDEs with Random Parameters on Random Domains</p>
         </div>
       </article>
 
       <article class="project">
         <img class="project-img" th:src="@{/img/theses/bachelorthesis.png}" alt="Bachelor Thesis Preview">
-
         <div class="project-body">
           <div class="project-top">
             <h3 class="project-title">Bachelor Thesis</h3>
             <a class="project-link" href="https://github.com/EliasReutelsterz/Bachelorarbeit" target="_blank" rel="noreferrer">GitHub ↗</a>
           </div>
-
-          <p class="project-desc">
-            Curie-Weiß Ising Model: Analysis with probabilistic and analytical methods
-          </p>
-
+          <p class="project-desc">Curie-Weiß Ising Model: Analysis with probabilistic and analytical methods</p>
         </div>
       </article>
-
     </div>
   </section>
 
